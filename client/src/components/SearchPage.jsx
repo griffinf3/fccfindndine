@@ -55,16 +55,8 @@ componentDidMount(){
     });   
      }}
       //if not authenticated:
-     else {username = '';
-           //OK but not required
-          this.setState({username: ''});
-          this.props.updateUsername('');
-          var username = encodeURIComponent(username);
-        //get search data from option pages
-         var searchData = encodeURIComponent(JSON.stringify({term:this.props.term, city: this.props.city, state: this.props.state, total: this.props.total, offset: this.props.offset}));  
-    this.doSearch(username, searchData);
-        }    
-}
+     else {this.setState({username: ''});
+          this.props.updateUsername('');}}
     
 addDefaultSrc(ev){
   ev.target.src = {noImage};
